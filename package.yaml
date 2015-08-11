@@ -1,0 +1,20 @@
+name: regex-applicative-text
+version: 0.1.0.0
+synopsis: regex-applicative on text
+description: Wrapped regex-applicative primitives to work with Text
+author: Oleg Grenrus <oleg.grenrus@iki.fi>
+maintainer: Oleg Grenrus <oleg.grenrus@iki.fi>
+license: BSD3
+github: phadej/regex-applicative-text
+category: Text
+extra-source-files: README.md
+
+ghc-options: -Wall
+
+dependencies:
+  - base >= 4.7 && <4.9
+  - regex-applicative >=0.3 && <0.3.3
+  - text
+
+library:
+  source-dirs: src
