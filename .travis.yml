@@ -1,4 +1,5 @@
 script:
+- stack +RTS -N2 -RTS --no-terminal --skip-ghc-check --stack-yaml $STACKYAML build
 - stack +RTS -N2 -RTS --no-terminal --skip-ghc-check --stack-yaml $STACKYAML test
 matrix:
   include:
@@ -20,8 +21,8 @@ matrix:
         - libgmp-dev
 install:
 - stack +RTS -N2 -RTS --no-terminal --skip-ghc-check --stack-yaml $STACKYAML setup
-- stack +RTS -N2 -RTS --no-terminal --skip-ghc-check --stack-yaml $STACKYAML test
-  --only-snapshot
+- stack +RTS -N2 -RTS --no-terminal --skip-ghc-check --stack-yaml $STACKYAML build --only-snapshot
+- stack +RTS -N2 -RTS --no-terminal --skip-ghc-check --stack-yaml $STACKYAML test --only-snapshot
 cache:
   directories:
   - ~/.stack
