@@ -13,7 +13,7 @@ ghc-options: -Wall
 
 dependencies:
   - base >= 4.7 && <4.9
-  - regex-applicative >=0.3 && <0.3.3
+  - regex-applicative >=0.3 && <0.4
   - text
 
 library:
