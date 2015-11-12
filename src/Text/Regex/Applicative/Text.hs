@@ -10,7 +10,7 @@
 -- @Text.Regex.Applicative@ API specialised to 'Char' and 'Text'.
 --------------------------------------------------------------------
 {-# LANGUAGE Safe #-}
-module Text.Regex.Applicative.Text 
+module Text.Regex.Applicative.Text
   (
   -- * Types
     RE'
@@ -42,7 +42,7 @@ module Text.Regex.Applicative.Text
 
 import           Control.Applicative
 import           Control.Arrow
-import           Data.Monoid
+import           Data.Monoid ((<>))
 import           Data.Text (Text)
 import qualified Data.Text as T
 import qualified Text.Regex.Applicative as R
