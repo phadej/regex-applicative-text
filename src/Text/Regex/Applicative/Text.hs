@@ -9,7 +9,10 @@
 --
 -- @Text.Regex.Applicative@ API specialised to 'Char' and 'Text'.
 --------------------------------------------------------------------
+{-# LANGUAGE CPP #-}
+#if __GLASGOW_HASKELL__ >=704
 {-# LANGUAGE Safe #-}
+#endif
 module Text.Regex.Applicative.Text
   (
   -- * Types
@@ -42,7 +45,7 @@ module Text.Regex.Applicative.Text
 
 import           Control.Applicative
 import           Control.Arrow
-import           Data.Monoid ((<>))
+import           Data.Monoid (mappend)
 import           Data.Text (Text)
 import qualified Data.Text as T
 import qualified Text.Regex.Applicative as R
@@ -187,7 +190,7 @@ replace r = go . T.unpack
         go [] = T.empty
         go ys@(x:xs) = case R.findLongestPrefix r ys of
                          Nothing              -> T.cons x (go xs)
-                         Just (prefix, rest)  -> prefix <> go rest
+                         Just (prefix, rest)  -> prefix `mappend` go rest
 
 -- Helpers
 

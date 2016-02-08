@@ -1,5 +1,5 @@
 name: regex-applicative-text
-version: 0.1.0.0
+version: 0.1.0.1
 synopsis: regex-applicative on text
 description: Wrapped regex-applicative primitives to work with Text
 author: Oleg Grenrus <oleg.grenrus@iki.fi>
@@ -8,12 +8,12 @@ license: BSD3
 github: phadej/regex-applicative-text
 category: Text
 extra-source-files: README.md
-tested-with: GHC==7.0.4, GHC==7.2.2, GHC==7.4.1, GHC==7.6.3, GHC==7.8.4, GHC==7.10.2
+tested-with: GHC==7.0.4, GHC==7.2.2, GHC==7.4.2, GHC==7.6.3, GHC==7.8.4, GHC==7.10.3, GHC==8.0.1
 
 ghc-options: -Wall
 
 dependencies:
-  - base >= 4.3 && <4.9
+  - base >= 4.3 && <4.10
   - regex-applicative >=0.3 && <0.4
   - text
 
