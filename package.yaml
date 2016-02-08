@@ -1,5 +1,5 @@
 name: regex-applicative-text
-version: 0.1.0.0
+version: 0.1.0.1
 synopsis: regex-applicative on text
 description: Wrapped regex-applicative primitives to work with Text
 author: Oleg Grenrus <oleg.grenrus@iki.fi>
