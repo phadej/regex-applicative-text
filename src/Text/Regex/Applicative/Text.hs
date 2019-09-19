@@ -9,7 +9,7 @@
 --
 -- @Text.Regex.Applicative@ API specialised to 'Char' and 'Text'.
 --------------------------------------------------------------------
-{-# LANGUAGE CPP #-}
+{-# LANGUAGE CPP  #-}
 #if __GLASGOW_HASKELL__ >=704
 {-# LANGUAGE Safe #-}
 #endif
@@ -39,15 +39,12 @@ module Text.Regex.Applicative.Text
   , findFirstInfix
   , findLongestInfix
   , findShortestInfix
-  -- * Module re-exports
-  , module Control.Applicative
   ) where
 
-import           Control.Applicative
-import           Control.Arrow
-import           Data.Monoid (mappend)
-import           Data.Text (Text)
-import qualified Data.Text as T
+import           Control.Arrow          (second)
+import           Data.Monoid            (mappend)
+import           Data.Text              (Text)
+import qualified Data.Text              as T
 import qualified Text.Regex.Applicative as R
 
 -- | Convenience alias for 'RE' working (also) on 'Text'.
@@ -196,7 +193,7 @@ replace r = go . T.unpack
 
 reTextF :: (a -> String -> b) -> (a -> Text -> b)
 reTextF f a s = f a (T.unpack s)
-{- INLINE reTextF -}
+{-# INLINE reTextF #-}
 
 pairF :: (a, String) -> (a, Text)
 pairF (x, y) = (x, T.pack y)
